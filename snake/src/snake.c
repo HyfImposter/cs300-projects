@@ -43,7 +43,7 @@ void end_game(int* cells, size_t width, size_t height, snake_t* snake_p) {
 
     // Free any memory we've taken
     teardown(cells, snake_p);
-
+    free(cells);
     // ****************** UNCOMMENT THIS CODE IN PART 3B ***********************
     /*
     // Render final GAME OVER PRESS ANY KEY TO EXIT screen
@@ -129,5 +129,5 @@ int main(int argc, char** argv) {
 
     //initialize_window(width, height);
     // TODO: implement the game loop here (Part 1A)!
-    // end_game(cells, width, height, &snake);
+    end_game(cells, width, height, &snake);
 }
