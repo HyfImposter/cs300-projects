@@ -127,7 +127,15 @@ int main(int argc, char** argv) {
         "   __________/ /    \n"
         "-=:___________/\n");
 
-    //initialize_window(width, height);
+    initialize_window(width, height);
     // TODO: implement the game loop here (Part 1A)!
+    while(true) {
+        // step1: wait for a particular time use usleep() function
+        usleep(100000);
+        // step3: update the game state
+        update(cells, width, height, NULL, INPUT_NONE, 0);
+        // step4: render the new game state to the screen
+        render_game(cells, width, height);
+    } 
     end_game(cells, width, height, &snake);
 }
